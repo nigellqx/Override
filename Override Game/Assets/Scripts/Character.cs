@@ -10,32 +10,15 @@ public class NewBehaviourScript : MonoBehaviour
         
     }
 
-    private float moveSpeed = 5.0f;
+    [SerializeField] private float moveSpeed = 5.0f;
+    [SerializeField] private GameInput gameInput; 
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 coordinates = new Vector2(0, 0);
+        Vector2 directionVector = gameInput.GetNormalisedMovementVector();
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            coordinates.x++;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            coordinates.x--;
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            coordinates.y++;
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            coordinates.y--;
-        }
-
-        coordinates = coordinates.normalized;
-        Vector3 newPosition = new Vector3(coordinates.x, 0f, coordinates.y);
+        Vector3 newPosition = new Vector3(directionVector.x, 0f, directionVector.y);
         transform.position += newPosition * Time.deltaTime * moveSpeed;
     }
 }
