@@ -11,6 +11,7 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     [SerializeField] private float moveSpeed = 5.0f;
+    [SerializeField] private float rotateSpeed = 8.0f;
     [SerializeField] private GameInput gameInput; 
 
     // Update is called once per frame
@@ -20,5 +21,6 @@ public class NewBehaviourScript : MonoBehaviour
 
         Vector3 newPosition = new Vector3(directionVector.x, 0f, directionVector.y);
         transform.position += newPosition * Time.deltaTime * moveSpeed;
+        transform.forward = Vector3.Slerp(transform.forward, newPosition, Time.deltaTime * rotateSpeed);
     }
 }
