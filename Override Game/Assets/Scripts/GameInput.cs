@@ -17,7 +17,6 @@ public class GameInput : MonoBehaviour
 
         directionVector = directionVector.normalized;
 
-        Debug.Log(directionVector);
         return directionVector;
     }
 
