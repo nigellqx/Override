@@ -6,11 +6,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private float rotateSpeed = 8.0f;
     [SerializeField] private GameInput gameInput;
@@ -18,8 +14,31 @@ public class Character : MonoBehaviour
     private bool isWalking;
     private Vector3 facingDirection;
 
+    private void Start() {
+        gameInput.OnInteractAction += GameInput_OnInteractAction;
+    }
+
+    private void GameInput_OnInteractAction(object sender, System.EventArgs e) {
+        Vector2 directionVector = gameInput.GetNormalisedMovementVector();
+        Vector3 newPosition = new Vector3(directionVector.x, 0f, directionVector.y);
+
+        //save direction that player currently faces
+        if (newPosition != Vector3.zero) {
+            facingDirection = newPosition;
+        }
+
+        float interactDistance = 1f;
+        if (Physics.Raycast(transform.position, facingDirection, out RaycastHit raycastHit, interactDistance)) {
+            if (raycastHit.transform.TryGetComponent(out Table table)) {
+                //Sees Table
+                table.Interact();
+            }
+        }
+
+    }
+
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Movement();
         Interactions();
@@ -42,10 +61,8 @@ public class Character : MonoBehaviour
         if (Physics.Raycast(transform.position, facingDirection, out RaycastHit raycastHit, interactDistance)) {
             if (raycastHit.transform.TryGetComponent(out Table table)) {
                 //Sees Table
-                table.Interact();
+                //table.Interact();
             }          
-        } else {
-            Debug.Log("-");
         }
         
     }
