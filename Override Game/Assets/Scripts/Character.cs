@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -6,6 +7,13 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public static Character Instance { get; private set; }
+
+    public event EventHandler<SelectedTableChangingArgs> SelectedTableChanging;
+    public class SelectedTableChangingArgs : EventArgs {
+        public Table selectedTable;
+    }
     
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private float rotateSpeed = 8.0f;
@@ -13,28 +21,23 @@ public class Character : MonoBehaviour
 
     private bool isWalking;
     private Vector3 facingDirection;
+    private Table selectedTable;
+
+    private void Awake() {
+        if (Instance != null) {
+            Debug.LogError("Too many player instances");
+        }
+        Instance = this;
+    }
 
     private void Start() {
         gameInput.OnInteractAction += GameInput_OnInteractAction;
     }
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e) {
-        Vector2 directionVector = gameInput.GetNormalisedMovementVector();
-        Vector3 newPosition = new Vector3(directionVector.x, 0f, directionVector.y);
-
-        //save direction that player currently faces
-        if (newPosition != Vector3.zero) {
-            facingDirection = newPosition;
+        if (selectedTable != null) {
+            selectedTable.Interact();
         }
-
-        float interactDistance = 1f;
-        if (Physics.Raycast(transform.position, facingDirection, out RaycastHit raycastHit, interactDistance)) {
-            if (raycastHit.transform.TryGetComponent(out Table table)) {
-                //Sees Table
-                table.Interact();
-            }
-        }
-
     }
 
     // Update is called once per frame
@@ -57,14 +60,19 @@ public class Character : MonoBehaviour
             facingDirection = newPosition;
         }
 
-        float interactDistance = 1f;        
+        float interactDistance = 1f;
         if (Physics.Raycast(transform.position, facingDirection, out RaycastHit raycastHit, interactDistance)) {
             if (raycastHit.transform.TryGetComponent(out Table table)) {
                 //Sees Table
-                //table.Interact();
-            }          
+                if (table != selectedTable) {
+                    SetSelectedTable(table);
+                }
+            } else {
+                SetSelectedTable(null);
+            }
+        } else {
+            SetSelectedTable(null);
         }
-        
     }
 
     private void Movement() {
@@ -109,6 +117,14 @@ public class Character : MonoBehaviour
 
         transform.forward = Vector3.Slerp(transform.forward, newPosition, Time.deltaTime * rotateSpeed);
         isWalking = newPosition != Vector3.zero;
+    }
+
+    private void SetSelectedTable(Table table) {
+        selectedTable = table;
+
+        SelectedTableChanging?.Invoke(this, new SelectedTableChangingArgs {
+            selectedTable = table
+        });
     }
 
 }
