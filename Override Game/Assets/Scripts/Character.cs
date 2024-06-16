@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Character : MonoBehaviour
-{
+public class Character : MonoBehaviour, IParentObject {
     // Start is called before the first frame update
 
     public static Character Instance { get; private set; }
@@ -18,10 +17,13 @@ public class Character : MonoBehaviour
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private float rotateSpeed = 8.0f;
     [SerializeField] private GameInput gameInput;
+    [SerializeField] private Transform holdingPoint;
 
     private bool isWalking;
     private Vector3 facingDirection;
     private Table selectedTable;
+    private classroomObject classroomObject;
+
 
     private void Awake() {
         if (Instance != null) {
@@ -36,7 +38,7 @@ public class Character : MonoBehaviour
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e) {
         if (selectedTable != null) {
-            selectedTable.Interact();
+            selectedTable.Interact(this);
         }
     }
 
@@ -127,4 +129,23 @@ public class Character : MonoBehaviour
         });
     }
 
+    public Transform getTableTopPoint() {
+        return holdingPoint;
+    }
+
+    public void setClassroomObject(classroomObject classroomObject) {
+        this.classroomObject = classroomObject;
+    }
+
+    public classroomObject GetClassroomObject() {
+        return classroomObject;
+    }
+
+    public void clearClassroomObject() {
+        this.classroomObject = null;
+    }
+
+    public bool hasClassroomObject() {
+        return this.classroomObject != null;
+    }
 }

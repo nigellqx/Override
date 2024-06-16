@@ -6,30 +6,30 @@ public class classroomObject : MonoBehaviour {
 
     [SerializeField] private pickUpObject pickUpObject;
 
-    private Table table;
+    private IParentObject parentObject;
 
     public pickUpObject getPickUpObject() {
         return pickUpObject;
     } 
 
-    public void setTable(Table table) {
-        if (this.table != null) {
-            this.table.clearClassroomObject();
+    public void setParentObject(IParentObject parentObject) {
+        if (this.parentObject != null) {
+            this.parentObject.clearClassroomObject();
         }
 
-        this.table = table;
+        this.parentObject = parentObject;
 
-        if (this.table.hasClassroomObject()) {
-            Debug.LogError("Table already has an item");
+        if (this.parentObject.hasClassroomObject()) {
+            Debug.LogError("ParentObject already has an item");
         }
 
-        table.setClassroomObject(this);
+        parentObject.setClassroomObject(this);
 
-        transform.parent = table.getTableTopPoint();
+        transform.parent = parentObject.getTableTopPoint();
         transform.localPosition = Vector3.zero; 
     }
 
-    public Table getTable() {
-        return table;
+    public IParentObject getParentObject() {
+        return parentObject;
     }
 }
