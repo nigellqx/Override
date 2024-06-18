@@ -11,7 +11,7 @@ public class Character : MonoBehaviour, IParentObject {
 
     public event EventHandler<SelectedTableChangingArgs> SelectedTableChanging;
     public class SelectedTableChangingArgs : EventArgs {
-        public Table selectedTable;
+        public Furniture selectedFurniture;
     }
     
     [SerializeField] private float moveSpeed = 5.0f;
@@ -21,7 +21,7 @@ public class Character : MonoBehaviour, IParentObject {
 
     private bool isWalking;
     private Vector3 facingDirection;
-    private Table selectedTable;
+    private Furniture selectedFurniture;
     private classroomObject classroomObject;
 
 
@@ -37,8 +37,8 @@ public class Character : MonoBehaviour, IParentObject {
     }
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e) {
-        if (selectedTable != null) {
-            selectedTable.Interact(this);
+        if (selectedFurniture != null) {
+            selectedFurniture.Interact(this);
         }
     }
 
@@ -64,10 +64,10 @@ public class Character : MonoBehaviour, IParentObject {
 
         float interactDistance = 1f;
         if (Physics.Raycast(transform.position, facingDirection, out RaycastHit raycastHit, interactDistance)) {
-            if (raycastHit.transform.TryGetComponent(out Table table)) {
+            if (raycastHit.transform.TryGetComponent(out Furniture furniture)) {
                 //Sees Table
-                if (table != selectedTable) {
-                    SetSelectedTable(table);
+                if (furniture != selectedFurniture) {
+                    SetSelectedTable(furniture);
                 }
             } else {
                 SetSelectedTable(null);
@@ -121,15 +121,15 @@ public class Character : MonoBehaviour, IParentObject {
         isWalking = newPosition != Vector3.zero;
     }
 
-    private void SetSelectedTable(Table table) {
-        selectedTable = table;
+    private void SetSelectedTable(Furniture furniture) {
+        selectedFurniture = furniture;
 
         SelectedTableChanging?.Invoke(this, new SelectedTableChangingArgs {
-            selectedTable = table
+            selectedFurniture = furniture
         });
     }
 
-    public Transform getTableTopPoint() {
+    public Transform getTopPoint() {
         return holdingPoint;
     }
 

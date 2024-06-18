@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55567d3c15261ca40b7dbca995f12946, type: 3}
-  m_Name: Laptop
+  m_Name: Blue Book
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6696044870152188621, guid: 344e1f211e4667248a75ca8823d9afaf, type: 3}
-  objectName: Laptop
+  prefab: {fileID: 3655598012908159988, guid: 45545ac2aca9a77408589c4802b34c76, type: 3}
+  objectName: Blue Book

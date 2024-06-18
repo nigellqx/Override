@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public interface IParentObject {
-    public Transform getTableTopPoint();
+    public Transform getTopPoint();
 
     public void setClassroomObject(classroomObject classroomObject);
 

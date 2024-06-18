@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Paper
   m_EditorClassIdentifier: 
   prefab: {fileID: 7056235295983583304, guid: 2476a62fb38931c4981ec538e976059e, type: 3}
-  name: Paper
+  objectName: Paper

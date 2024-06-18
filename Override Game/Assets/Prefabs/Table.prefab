@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpObject: {fileID: 0}
-  TopOfTable: {fileID: 1778342204065844687}
+  topOfTable: {fileID: 0}
 --- !u!1 &7697396642181260400
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,9 +242,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de370f4191216345a49b07e208bc9ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1805076746646469200}
-  visuals: {fileID: 3668468860117553795}
-  visuals2: {fileID: 7440570842339850153}
+  furniture: {fileID: 1805076746646469200}
+  visualsArray:
+  - {fileID: 3668468860117553795}
+  - {fileID: 7440570842339850153}
 --- !u!4 &3206317386033729588 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eb9e324519d020d4a8d616446b2058f1,

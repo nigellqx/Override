@@ -25,7 +25,7 @@ public class classroomObject : MonoBehaviour {
 
         parentObject.setClassroomObject(this);
 
-        transform.parent = parentObject.getTableTopPoint();
+        transform.parent = parentObject.getTopPoint();
         transform.localPosition = Vector3.zero; 
     }
 
