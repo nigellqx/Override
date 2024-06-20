@@ -5,12 +5,13 @@ using UnityEngine;
 public class ComputerTable : Furniture
 {
 
-    [SerializeField] private pickUpObject pickUpObject;
-
+    [SerializeField] private pickUpObject[] bookList;
     public override void Interact(Character character) {
         if (!hasClassroomObject()) {
             if (character.hasClassroomObject()) {
-                character.GetClassroomObject().setParentObject(this);
+                if (hasBook(character.GetClassroomObject().getPickUpObject())) {
+                    character.GetClassroomObject().setParentObject(this);
+                }
             }
         } else {
             if (!character.hasClassroomObject()) {
@@ -20,9 +21,17 @@ public class ComputerTable : Furniture
     }
 
     public override void Use(Character character) {
-        if (hasClassroomObject()) {
+        if (hasClassroomObject() && hasBook(GetClassroomObject().getPickUpObject())) {
             GetClassroomObject().removeObject();
         }
     }
 
+    private bool hasBook(pickUpObject itemOnTable) {
+        foreach (pickUpObject book in bookList) {
+            if (book == itemOnTable) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
