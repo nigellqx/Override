@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class classroomObject : MonoBehaviour {
 
@@ -37,5 +38,12 @@ public class classroomObject : MonoBehaviour {
         parentObject.clearClassroomObject();
 
         Destroy(gameObject);
+    }
+
+    public static classroomObject spawnClassroomObject(pickUpObject pickUpObject, IParentObject parentObject) {
+        Transform classroomObjectTransform = Instantiate(pickUpObject.prefab);
+        classroomObject classroomObject = classroomObjectTransform.GetComponent<classroomObject>();
+        classroomObject.setParentObject(parentObject);
+        return classroomObject;
     }
 }
