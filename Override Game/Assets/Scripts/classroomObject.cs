@@ -32,4 +32,10 @@ public class classroomObject : MonoBehaviour {
     public IParentObject getParentObject() {
         return parentObject;
     }
+
+    public void removeObject() {
+        parentObject.clearClassroomObject();
+
+        Destroy(gameObject);
+    }
 }
