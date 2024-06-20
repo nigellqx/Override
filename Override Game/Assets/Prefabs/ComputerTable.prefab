@@ -228,7 +228,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topPoint: {fileID: 3999080686773316275}
-  pickUpObject: {fileID: 0}
+  bookList:
+  - {fileID: 11400000, guid: c142b3af231f59746ba9813846bc503f, type: 2}
+  - {fileID: 11400000, guid: 182b3a59d4581f142a1ba0f3163075ac, type: 2}
+  - {fileID: 11400000, guid: 88dc5f17856081e4882d448c5394f823, type: 2}
+  - {fileID: 11400000, guid: a789dcc7062ff6d458bb638947d0df90, type: 2}
 --- !u!1001 &5641938764362823039
 PrefabInstance:
   m_ObjectHideFlags: 0

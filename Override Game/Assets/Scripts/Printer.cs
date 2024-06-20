@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Table : Furniture {
-   
+public class Printer : Furniture
+{
+
     public override void Interact(Character character) {
         if (!hasClassroomObject()) {
             if (character.hasClassroomObject()) {
