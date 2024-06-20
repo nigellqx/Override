@@ -8,8 +8,7 @@ public class Bookshelf : Furniture {
     
     public override void Interact(Character character) {
         if (!character.hasClassroomObject()) {
-            Transform classroomObjectTransform = Instantiate(pickUpObject.prefab);
-            classroomObjectTransform.GetComponent<classroomObject>().setParentObject(character);
+            classroomObject.spawnClassroomObject(pickUpObject, character);
         }
     }
 
