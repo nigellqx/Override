@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ecff763eec47b7429383e8be35d1f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpObject: {fileID: 0}
-  topOfBookshelf: {fileID: 0}
+  topPoint: {fileID: 5434959941546614195}
+  pickUpObject: {fileID: 11400000, guid: c142b3af231f59746ba9813846bc503f, type: 2}
 --- !u!1 &8618350165687227718
 GameObject:
   m_ObjectHideFlags: 0

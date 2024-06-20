@@ -10,6 +10,9 @@ public class Furniture : MonoBehaviour, IParentObject {
     public virtual void Interact(Character character) {
     }
 
+    public virtual void Use(Character character) {
+    }
+
     public Transform getTopPoint() {
         return topPoint;
     }

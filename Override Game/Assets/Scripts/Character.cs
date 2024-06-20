@@ -34,6 +34,13 @@ public class Character : MonoBehaviour, IParentObject {
 
     private void Start() {
         gameInput.OnInteractAction += GameInput_OnInteractAction;
+        gameInput.OnUseAction += GameInput_OnUseAction;
+    }
+
+    private void GameInput_OnUseAction(object sender, EventArgs e) {
+        if (selectedFurniture != null) {
+            selectedFurniture.Use(this);
+        }
     }
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e) {

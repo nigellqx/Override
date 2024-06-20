@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a008b75697ead8744984be592778a2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topPoint: {fileID: 1778342204065844687}
   pickUpObject: {fileID: 0}
-  topOfTable: {fileID: 0}
 --- !u!1 &7697396642181260400
 GameObject:
   m_ObjectHideFlags: 0
