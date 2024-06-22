@@ -12,6 +12,18 @@ public class Table : Furniture {
         } else {
             if (!character.hasClassroomObject()) {
                 GetClassroomObject().setParentObject(character);
+            } else {
+                if (character.GetClassroomObject().TryGetFile(out FileClassroomObject fileClassroomObject)) {
+                    if (fileClassroomObject.TryInsertPaper(GetClassroomObject().getPickUpObject())) {
+                        GetClassroomObject().removeObject();
+                    }
+                } else {
+                    if (GetClassroomObject().TryGetFile(out fileClassroomObject)) {
+                        if (fileClassroomObject.TryInsertPaper(character.GetClassroomObject().getPickUpObject())) {
+                            character.GetClassroomObject().removeObject();
+                        }
+                    }
+                }
             }
         }
     }

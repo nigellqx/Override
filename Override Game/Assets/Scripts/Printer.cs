@@ -13,6 +13,12 @@ public class Printer : Furniture
         } else {
             if (!character.hasClassroomObject()) {
                 GetClassroomObject().setParentObject(character);
+            } else {
+                if (character.GetClassroomObject().TryGetFile(out FileClassroomObject fileClassroomObject)) {
+                    if (fileClassroomObject.TryInsertPaper(GetClassroomObject().getPickUpObject())) {
+                        GetClassroomObject().removeObject();
+                    }
+                }
             }
         }
     }
