@@ -5,7 +5,7 @@ using UnityEngine;
 public class ComputerTable : Furniture
 {
 
-    [SerializeField] private pickUpObject[] bookList;
+    [SerializeField] private BookToPaperSO[] bookList;
     public override void Interact(Character character) {
         if (!hasClassroomObject()) {
             if (character.hasClassroomObject()) {
@@ -22,16 +22,31 @@ public class ComputerTable : Furniture
 
     public override void Use(Character character) {
         if (hasClassroomObject() && hasBook(GetClassroomObject().getPickUpObject())) {
+            pickUpObject paperToCreate = bookToPaper(GetClassroomObject().getPickUpObject());
             GetClassroomObject().removeObject();
+            classroomObject.spawnClassroomObject(paperToCreate, this);
         }
     }
 
     private bool hasBook(pickUpObject itemOnTable) {
-        foreach (pickUpObject book in bookList) {
-            if (book == itemOnTable) {
-                return true;
+        BookToPaperSO bookToPaper = getbookToPaperSO(itemOnTable);
+        return bookToPaper != null;
+    }
+
+    private pickUpObject bookToPaper(pickUpObject itemOnTable) {
+        BookToPaperSO bookToPaper = getbookToPaperSO(itemOnTable);
+        if (bookToPaper != null) {
+            return bookToPaper.output;
+        }
+        return null;
+    }
+
+    private BookToPaperSO getbookToPaperSO(pickUpObject itemOnTable) {
+        foreach (BookToPaperSO bookTransform in bookList) {
+            if (bookTransform.input == itemOnTable) {
+                return bookTransform;
             }
         }
-        return false;
+        return null;
     }
 }

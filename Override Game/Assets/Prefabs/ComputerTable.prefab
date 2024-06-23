@@ -229,10 +229,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topPoint: {fileID: 3999080686773316275}
   bookList:
-  - {fileID: 11400000, guid: c142b3af231f59746ba9813846bc503f, type: 2}
-  - {fileID: 11400000, guid: 182b3a59d4581f142a1ba0f3163075ac, type: 2}
-  - {fileID: 11400000, guid: 88dc5f17856081e4882d448c5394f823, type: 2}
-  - {fileID: 11400000, guid: a789dcc7062ff6d458bb638947d0df90, type: 2}
+  - {fileID: 11400000, guid: b4742a8cc5dc6594f980803ccfe3506e, type: 2}
+  - {fileID: 11400000, guid: c6d92644fdaabf344a38ce0c5da8fe4f, type: 2}
+  - {fileID: 11400000, guid: 4dbd6597231b50a4aa2efeb1a72e9660, type: 2}
+  - {fileID: 11400000, guid: 6efe74c3710763a4b83be3830c6381b9, type: 2}
 --- !u!1001 &5641938764362823039
 PrefabInstance:
   m_ObjectHideFlags: 0
