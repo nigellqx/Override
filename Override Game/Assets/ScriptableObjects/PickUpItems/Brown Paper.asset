@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 5842852773335532281, guid: ffe53ddccfd9f5a42a6b39cffcb0ef88, type: 3}
   objectName: Brown Paper
+  sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
