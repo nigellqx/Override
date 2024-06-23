@@ -6,6 +6,7 @@ public class ComputerTable : Furniture
 {
 
     [SerializeField] private BookToPaperSO[] bookList;
+    [SerializeField] private Printer linkedPrinter;
     public override void Interact(Character character) {
         if (!hasClassroomObject()) {
             if (character.hasClassroomObject()) {
@@ -21,10 +22,14 @@ public class ComputerTable : Furniture
     }
 
     public override void Use(Character character) {
+        if (linkedPrinter.hasClassroomObject() || linkedPrinter.isPrinting()) {
+            Debug.Log("Printer is occupied!");
+            return;
+        }
         if (hasClassroomObject() && hasBook(GetClassroomObject().getPickUpObject())) {
-            pickUpObject paperToCreate = bookToPaper(GetClassroomObject().getPickUpObject());
+            BookToPaperSO bookToPaperSO = getbookToPaperSO(GetClassroomObject().getPickUpObject());
             GetClassroomObject().removeObject();
-            classroomObject.spawnClassroomObject(paperToCreate, this);
+            linkedPrinter.beginPrinting(bookToPaperSO.output, bookToPaperSO.printingTime);
         }
     }
 

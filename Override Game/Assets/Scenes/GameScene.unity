@@ -254,6 +254,11 @@ PrefabInstance:
       propertyPath: topPoint
       value: 
       objectReference: {fileID: 2026734999}
+    - target: {fileID: 5205434386985948119, guid: fc8d7f1968e2dfa4d9e72e9a33bc7a1c,
+        type: 3}
+      propertyPath: linkedPrinter
+      value: 
+      objectReference: {fileID: 1189033409}
     - target: {fileID: 6738095596794284002, guid: fc8d7f1968e2dfa4d9e72e9a33bc7a1c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1804,6 +1809,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1d7a665c39ad9d43bf851e48fc10995, type: 3}
+--- !u!114 &1189033409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1020212687810704662, guid: 7bf881b9ac87e864f85ee3bf23e88f09,
+    type: 3}
+  m_PrefabInstance: {fileID: 2040997764}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac06fe38eae5cef4198423879e900afa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1256860128 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1778342204065844687, guid: e1d7a665c39ad9d43bf851e48fc10995,
