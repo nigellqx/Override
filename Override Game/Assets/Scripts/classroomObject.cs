@@ -46,4 +46,14 @@ public class classroomObject : MonoBehaviour {
         classroomObject.setParentObject(parentObject);
         return classroomObject;
     }
+    
+    public bool TryGetFile(out FileClassroomObject fileClassroomObject) {
+        if (this is FileClassroomObject) {
+            fileClassroomObject = this as FileClassroomObject;
+            return true;
+        } else {
+            fileClassroomObject = null;
+            return false;
+        }
+    }
 }

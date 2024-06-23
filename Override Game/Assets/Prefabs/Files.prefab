@@ -46,17 +46,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b825a1af3af7cf64aa7a177b8e74e95c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.7071067
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b825a1af3af7cf64aa7a177b8e74e95c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0.7049344
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b825a1af3af7cf64aa7a177b8e74e95c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.7071068
+      value: -0.05538487
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b825a1af3af7cf64aa7a177b8e74e95c,
         type: 3}
@@ -95,7 +95,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b825a1af3af7cf64aa7a177b8e74e95c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: -5981109787497867960}
+      addedObject: {fileID: 1641530784595244883}
   m_SourcePrefab: {fileID: 100100000, guid: b825a1af3af7cf64aa7a177b8e74e95c, type: 3}
 --- !u!1 &4779993587829111083 stripped
 GameObject:
@@ -103,7 +103,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5662321082980353146}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-5981109787497867960
+--- !u!114 &1641530784595244883
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,7 +112,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4779993587829111083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ac86b0862eafa84b8883d725ff32f4e, type: 3}
+  m_Script: {fileID: 11500000, guid: fd4bc9c7a10162d499bc72aa5fc9e934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpObject: {fileID: 11400000, guid: 24bb81852bbe7e541b4fbcc9294fd646, type: 2}
+  paperList:
+  - {fileID: 11400000, guid: 1f5829df84dd3e94a9e9c36dcbed796a, type: 2}
+  - {fileID: 11400000, guid: cfd43b50a118aa34688e8738277256da, type: 2}
+  - {fileID: 11400000, guid: 55c03731e4e7c3640a2a52edfd1ed3db, type: 2}
+  - {fileID: 11400000, guid: 0b46ebad5c101cb4bb69fc7be8a9416f, type: 2}
