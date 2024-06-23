@@ -6,7 +6,7 @@ public class Furniture : MonoBehaviour, IParentObject {
 
     [SerializeField] private Transform topPoint;
 
-    private classroomObject classroomObject;
+    [SerializeField] private classroomObject classroomObject;
     public virtual void Interact(Character character) {
     }
 
