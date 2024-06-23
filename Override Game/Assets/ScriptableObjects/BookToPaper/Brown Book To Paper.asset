@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95af4ebbbcb36c1459a77df2e4728511, type: 3}
-  m_Name: Green Book To Paper
+  m_Name: Brown Book To Paper
   m_EditorClassIdentifier: 
-  input: {fileID: 11400000, guid: 88dc5f17856081e4882d448c5394f823, type: 2}
-  output: {fileID: 11400000, guid: 55c03731e4e7c3640a2a52edfd1ed3db, type: 2}
+  input: {fileID: 11400000, guid: 182b3a59d4581f142a1ba0f3163075ac, type: 2}
+  output: {fileID: 11400000, guid: cfd43b50a118aa34688e8738277256da, type: 2}
+  studyingTime: 5
+  printingTime: 5

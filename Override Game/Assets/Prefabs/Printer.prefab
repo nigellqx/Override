@@ -120,7 +120,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4279568838387845225}
   m_LocalRotation: {x: -0, y: -0.03410258, z: -0, w: 0.9994184}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.297}
   m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -130,7 +130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -3.909, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0, y: 1.266}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8834544240032229143
@@ -368,6 +368,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topPoint: {fileID: 4656275148325905346}
+  paperList:
+  - {fileID: 11400000, guid: 1f5829df84dd3e94a9e9c36dcbed796a, type: 2}
+  - {fileID: 11400000, guid: cfd43b50a118aa34688e8738277256da, type: 2}
+  - {fileID: 11400000, guid: 55c03731e4e7c3640a2a52edfd1ed3db, type: 2}
+  - {fileID: 11400000, guid: 0b46ebad5c101cb4bb69fc7be8a9416f, type: 2}
+  testSpawn: {fileID: 11400000, guid: 1f5829df84dd3e94a9e9c36dcbed796a, type: 2}
 --- !u!1 &8754448371305609265
 GameObject:
   m_ObjectHideFlags: 0
