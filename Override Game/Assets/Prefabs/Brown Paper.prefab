@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac86b0862eafa84b8883d725ff32f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpObject: {fileID: 11400000, guid: cfd43b50a118aa34688e8738277256da, type: 2}
+  pickUpObject: {fileID: 11400000, guid: 1f5829df84dd3e94a9e9c36dcbed796a, type: 2}
 --- !u!1 &6825492374032044482
 GameObject:
   m_ObjectHideFlags: 0
