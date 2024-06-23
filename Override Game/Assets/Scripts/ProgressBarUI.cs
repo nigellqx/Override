@@ -7,14 +7,35 @@ public class ProgressBarUI : MonoBehaviour
 {
 
     [SerializeField] private Image bar;
-    [SerializeField] private Printer printer;
+    [SerializeField] private GameObject hasProgressGameObject;
+
+    private IHasProgressBar hasProgress;
 
     private void Start() {
-        printer.BarProgressChanged += Printer_BarProgressChanged;
+        hasProgress = hasProgressGameObject.GetComponent<IHasProgressBar>();
+        if (hasProgress == null) {
+            Debug.LogError(hasProgressGameObject + "does not implement progress bar interface IHasProgressBar");
+        }
+        hasProgress.BarProgressChanged += HasProgress_BarProgressChanged;
         bar.fillAmount = 0f;
+        hide();
     }
 
-    private void Printer_BarProgressChanged(object sender, Printer.BarProgressChangedEventArgs e) {
+    private void HasProgress_BarProgressChanged(object sender, IHasProgressBar.BarProgressChangedEventArgs e) {
         bar.fillAmount = e.progress;
+
+        if (e.progress == 0f || e.progress == 1f) {
+            hide();
+        } else {
+            show();
+        }
+    }
+
+    private void show() {
+        gameObject.SetActive(true);
+    }
+
+    private void hide() {
+        gameObject?.SetActive(false);
     }
 }
