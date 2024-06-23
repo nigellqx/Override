@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7056235295983583304, guid: 2476a62fb38931c4981ec538e976059e, type: 3}
   objectName: Blue Paper
-  sprite: {fileID: 21300000, guid: c34cd61ed96ff9a40a54e159467c5155, type: 3}
+  sprite: {fileID: 21300000, guid: 84ee72d0b5c604748b473c5d139ce47a, type: 3}
