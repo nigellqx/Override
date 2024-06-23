@@ -3,13 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Printer : Furniture
+public class Printer : Furniture, IHasProgressBar
 {
 
-    public event EventHandler<BarProgressChangedEventArgs> BarProgressChanged;
-    public class BarProgressChangedEventArgs : EventArgs {
-        public float progress;
-    }
+    public event EventHandler<IHasProgressBar.BarProgressChangedEventArgs> BarProgressChanged;
 
     private float printingProgress;
     private float printDuration;
@@ -19,10 +16,15 @@ public class Printer : Furniture
     private void Update() {
         if (printing) {
             printingProgress += Time.deltaTime;
+            BarProgressChanged?.Invoke(this, new IHasProgressBar.BarProgressChangedEventArgs {
+                progress = printingProgress / printDuration
+            });
             if (printingProgress > printDuration) {
                 classroomObject.spawnClassroomObject(paperToPrint, this);
-                Debug.Log("Printed!");
                 printing = false;
+                BarProgressChanged?.Invoke(this, new IHasProgressBar.BarProgressChangedEventArgs {
+                    progress = 0f
+                });
             }
         }
     }
@@ -46,7 +48,9 @@ public class Printer : Furniture
     }
 
     public void beginPrinting(pickUpObject paperCreated, float duration) {
-        Debug.Log("Printing!");
+        BarProgressChanged?.Invoke(this, new IHasProgressBar.BarProgressChangedEventArgs {
+            progress = printingProgress / printDuration
+        });
         paperToPrint = paperCreated;
         printDuration = duration;
         printingProgress = 0;
