@@ -9,4 +9,5 @@ public class pickUpObject : ScriptableObject {
 
     public string objectName;
 
+    public Sprite sprite;
 }

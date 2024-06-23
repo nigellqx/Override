@@ -34,4 +34,8 @@ public class FileClassroomObject : classroomObject {
             return true;
         }
     }
+
+    public List<pickUpObject> GetPickUpObjectList() {
+        return pickUpObjectList;
+    }
 }
