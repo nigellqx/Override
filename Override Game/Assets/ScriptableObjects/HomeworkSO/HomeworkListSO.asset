@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8f2d2b9e8f6b64e9bf8d9555bb2d41, type: 3}
+  m_Name: HomeworkListSO
+  m_EditorClassIdentifier: 
+  homeworkSOList:
+  - {fileID: 11400000, guid: be76c6a61939b3d4e94269d40811dbea, type: 2}
+  - {fileID: 11400000, guid: bd3212b9bbb2dc54e8a7f6775ab8a3bc, type: 2}
+  - {fileID: 11400000, guid: 982ce15eebc2a82468050173499a74c1, type: 2}
+  - {fileID: 11400000, guid: 0aff8096c5ec3104cbde719ebac08e00, type: 2}
+  - {fileID: 11400000, guid: c3ddb3d306acb7e4795e40d79db6c23e, type: 2}
+  - {fileID: 11400000, guid: 97f2440b10d232e43843a4dacbc2567c, type: 2}
+  - {fileID: 11400000, guid: 961cfa81f7e9d2549b94a59bcef1dc73, type: 2}
+  - {fileID: 11400000, guid: 90e85bd87301d284aaa01a6b28a0106a, type: 2}
+  - {fileID: 11400000, guid: f7789d6471fb2fc4ab7c4a64ef8d82f2, type: 2}
+  - {fileID: 11400000, guid: 168196a7032746b4c9ad5bd44d89e28e, type: 2}
+  - {fileID: 11400000, guid: c734f7ecf19286145a9d645edbb48d3f, type: 2}
+  - {fileID: 11400000, guid: ed90d5c7d12b4474888f826a3f3df4d9, type: 2}
+  - {fileID: 11400000, guid: 6576e6a488591ab41b42059e914e514a, type: 2}
+  - {fileID: 11400000, guid: 993675e13ada28945b638ddea869bee1, type: 2}
+  - {fileID: 11400000, guid: 643ef12292929074eb43540238eba0b0, type: 2}
