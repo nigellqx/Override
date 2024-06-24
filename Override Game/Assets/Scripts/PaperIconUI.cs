@@ -29,7 +29,7 @@ public class PaperIconUI : MonoBehaviour {
 
         foreach(pickUpObject pickUpObject in fileClassroomObject.GetPickUpObjectList()) {
             Transform iconTransform = Instantiate(iconTemplate, transform);
-            iconTemplate.gameObject.SetActive(true);
+            iconTransform.gameObject.SetActive(true);
             iconTransform.GetComponent<PaperIconSingleUI>().setPickUpObject(pickUpObject);
         }
     }
