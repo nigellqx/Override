@@ -1,8 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SubmissionManager : MonoBehaviour {
+
+    public event EventHandler onHomeworkSpawned;
+    public event EventHandler onHomeworkCompleted;
 
     public static SubmissionManager Instance {  get; private set; }
 
@@ -24,9 +28,10 @@ public class SubmissionManager : MonoBehaviour {
             spawnHomeworkTimer = spawnHomeworkTimerMax;
 
             if (waitingHomeworkSOList.Count < waitingHomeworkMax) {
-                HomeworkSO waitingHomeworkSO = HomeworkListSO.homeworkSOList[Random.Range(0, HomeworkListSO.homeworkSOList.Count)];
+                HomeworkSO waitingHomeworkSO = HomeworkListSO.homeworkSOList[UnityEngine.Random.Range(0, HomeworkListSO.homeworkSOList.Count)];
                 Debug.Log(waitingHomeworkSO.homeworkName);
                 waitingHomeworkSOList.Add(waitingHomeworkSO);
+                onHomeworkSpawned?.Invoke(this, EventArgs.Empty);
             }
         }
     }
@@ -53,10 +58,15 @@ public class SubmissionManager : MonoBehaviour {
                 if (FilePapersMatchesHomework) {
                     Debug.Log("Correct");
                     waitingHomeworkSOList.RemoveAt(i);
+                    onHomeworkCompleted?.Invoke(this, EventArgs.Empty);
                     return;
                 }
             }
         }
         Debug.Log("Wrong");
+    }
+
+    public List<HomeworkSO> getWaitingHomeworkListSO() {
+        return waitingHomeworkSOList;
     }
 }
