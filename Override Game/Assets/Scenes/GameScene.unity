@@ -1574,6 +1574,12 @@ PrefabInstance:
       propertyPath: topOfBookshelf
       value: 
       objectReference: {fileID: 468302683}
+    - target: {fileID: 5762529903776987783, guid: 92c5c73ee19317148ba2c5f6bfa694cc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6a5b0083f7dcd2b48b0891d8dba0d1f3,
+        type: 3}
     - target: {fileID: 5787528272496893176, guid: 92c5c73ee19317148ba2c5f6bfa694cc,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -3196,7 +3202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1367772018
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3348,6 +3354,12 @@ PrefabInstance:
       propertyPath: topOfBookshelf
       value: 
       objectReference: {fileID: 58838365}
+    - target: {fileID: 5762529903776987783, guid: 92c5c73ee19317148ba2c5f6bfa694cc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c1e5b730c98fd34db86db3434152839,
+        type: 3}
     - target: {fileID: 5787528272496893176, guid: 92c5c73ee19317148ba2c5f6bfa694cc,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -4390,6 +4402,12 @@ PrefabInstance:
       propertyPath: topOfBookshelf
       value: 
       objectReference: {fileID: 1335252235}
+    - target: {fileID: 5762529903776987783, guid: 92c5c73ee19317148ba2c5f6bfa694cc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fc318310fa020f347b324e9853db0a5a,
+        type: 3}
     - target: {fileID: 5787528272496893176, guid: 92c5c73ee19317148ba2c5f6bfa694cc,
         type: 3}
       propertyPath: m_LocalPosition.y
