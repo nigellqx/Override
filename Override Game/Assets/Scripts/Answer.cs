@@ -12,7 +12,7 @@ public class Answer : MonoBehaviour {
             quizManager.correct();
         } else {
             Debug.Log("Wrong!");
-            quizManager.correct();
+            quizManager.wrong();
         }
     }
 }

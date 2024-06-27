@@ -2855,6 +2855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b111f49f81ba5bd43a889ad2bfbcde7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quizBackground: {fileID: 1367772018}
   questions:
   - Questions: Name of the game?
     Answers:
@@ -3202,7 +3203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1367772018
 RectTransform:
   m_ObjectHideFlags: 0

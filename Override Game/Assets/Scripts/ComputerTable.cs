@@ -27,10 +27,14 @@ public class ComputerTable : Furniture
             return;
         }
         if (hasClassroomObject() && hasBook(GetClassroomObject().getPickUpObject())) {
-            BookToPaperSO bookToPaperSO = getbookToPaperSO(GetClassroomObject().getPickUpObject());
-            GetClassroomObject().removeObject();
-            linkedPrinter.beginPrinting(bookToPaperSO.output, bookToPaperSO.printingTime);
+            QuizManager.Instance.askQuestions(this);
         }
+    }
+
+    public void beginPrinting() {
+        BookToPaperSO bookToPaperSO = getbookToPaperSO(GetClassroomObject().getPickUpObject());
+        GetClassroomObject().removeObject();
+        linkedPrinter.beginPrinting(bookToPaperSO.output, bookToPaperSO.printingTime);
     }
 
     private bool hasBook(pickUpObject itemOnTable) {
