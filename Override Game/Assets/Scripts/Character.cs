@@ -38,12 +38,16 @@ public class Character : MonoBehaviour, IParentObject {
     }
 
     private void GameInput_OnUseAction(object sender, EventArgs e) {
+        if (!OverrideGameManager.Instance.isGamePlaying()) return;
+
         if (selectedFurniture != null) {
             selectedFurniture.Use(this);
         }
     }
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e) {
+        if (!OverrideGameManager.Instance.isGamePlaying()) return;
+
         if (selectedFurniture != null) {
             selectedFurniture.Interact(this);
         }
