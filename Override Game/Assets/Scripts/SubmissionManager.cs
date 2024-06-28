@@ -56,7 +56,6 @@ public class SubmissionManager : MonoBehaviour {
                 }
 
                 if (FilePapersMatchesHomework) {
-                    Debug.Log("Correct");
                     waitingHomeworkSOList.RemoveAt(i);
                     onHomeworkCompleted?.Invoke(this, EventArgs.Empty);
                     return;
