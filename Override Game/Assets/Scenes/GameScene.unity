@@ -3556,19 +3556,77 @@ MonoBehaviour:
     - Override
     - Overkill
     CorrectAnswers: 3
-  - Questions: What is the programming language used to make Override?
+  - Questions: In many programming language, what is the index of the first element
+      in an array?
     Answers:
-    - Python
-    - C++
-    - C#
-    - Java
+    - 1
+    - -1
+    - 0
+    - Depends on the size of array
     CorrectAnswers: 3
-  - Questions: What is 10 + 3?
+  - Questions: What is the primary purpose of a function in programming?
     Answers:
-    - 13
-    - 2
-    - 3
-    - 4
+    - To group code into reusable blocks
+    - 'To store data '
+    - To perform mathematical calculations
+    - To print output to the screen
+    CorrectAnswers: 1
+  - Questions: _____ is the process of finding errors and fixing them within a program.
+    Answers:
+    - Compiling
+    - Executing
+    - Debugging
+    - Scanning
+    CorrectAnswers: 3
+  - Questions: Which of the following is NOT a requirement for a for loop?
+    Answers:
+    - Initialization
+    - Condition
+    - Variable
+    - Increment
+    CorrectAnswers: 3
+  - Questions: What does 'continue' do in a loop?
+    Answers:
+    - Terminates the loop
+    - Skips the current iteration and proceed to the next one
+    - Pauses the loop execution
+    - None of the above
+    CorrectAnswers: 2
+  - Questions: What is programming?
+    Answers:
+    - The process of designing computer hardware
+    - The process of writing insturctions for a computer to perform tasks
+    - The process of repairing computer software
+    - The process of analyzing computer algorithms
+    CorrectAnswers: 2
+  - Questions: What is a program or set of instructions that a computer can execute
+      called?
+    Answers:
+    - Algorithm
+    - Script
+    - Software
+    - Compiler
+    CorrectAnswers: 3
+  - Questions: Which of the following is NOT a high-level programming language?
+    Answers:
+    - 'C++ '
+    - Python
+    - Java
+    - Assembly language
+    CorrectAnswers: 4
+  - Questions: Which data type is used to store whole numbers in programming?
+    Answers:
+    - Integer
+    - Boolean
+    - String
+    - Float
+    CorrectAnswers: 1
+  - Questions: What is the purpose of a programming language?
+    Answers:
+    - To facilitate communication between humans and computers
+    - To design computer algorithms
+    - To communicate with other programmers
+    - To write computer hardware specifications
     CorrectAnswers: 1
   options:
   - {fileID: 1015612694}
