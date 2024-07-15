@@ -15,16 +15,27 @@ public class OverrideGameManager : MonoBehaviour
     public static OverrideGameManager Instance { get; private set; }
 
     public event EventHandler onGamestateChanged;
+    public event EventHandler onGamePause;
+    public event EventHandler onGameResume;
 
     private Gamestate gamestate;
     private float waitingToStartTimer = 1f;
     private float startCountdownTimer = 3f;
     private float gamePlayingTimer;
     private float gamePlayingTimerMax = 120f;
+    private bool isPaused = false;
 
     private void Awake() {
         Instance = this;
         gamestate = Gamestate.WaitingToStart;
+    }
+
+    private void Start() {
+        GameInput.Instance.OnPauseAction += GameInput_OnPauseAction;
+    }
+
+    private void GameInput_OnPauseAction(object sender, EventArgs e) {
+        TogglePause();
     }
 
     private void Update() {
@@ -74,5 +85,16 @@ public class OverrideGameManager : MonoBehaviour
 
     public float getGamePlayingTimer() {
         return gamePlayingTimer / gamePlayingTimerMax;
+    }
+
+    public void TogglePause() {
+        isPaused = !isPaused;
+        if (isPaused) {
+            Time.timeScale = 0f;
+            onGamePause?.Invoke(this, EventArgs.Empty);
+        } else {
+            Time.timeScale = 1f;
+            onGameResume?.Invoke(this, EventArgs.Empty);
+        }
     }
 }
