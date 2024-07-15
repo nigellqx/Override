@@ -39,6 +39,7 @@ public class Character : MonoBehaviour, IParentObject {
 
     private void GameInput_OnUseAction(object sender, EventArgs e) {
         if (!OverrideGameManager.Instance.isGamePlaying()) return;
+        if (OverrideGameManager.Instance.isGamePaused()) return;
 
         if (selectedFurniture != null) {
             selectedFurniture.Use(this);
@@ -47,6 +48,7 @@ public class Character : MonoBehaviour, IParentObject {
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e) {
         if (!OverrideGameManager.Instance.isGamePlaying()) return;
+        if (OverrideGameManager.Instance.isGamePaused()) return;
 
         if (selectedFurniture != null) {
             selectedFurniture.Interact(this);

@@ -97,4 +97,8 @@ public class OverrideGameManager : MonoBehaviour
             onGameResume?.Invoke(this, EventArgs.Empty);
         }
     }
+
+    public bool isGamePaused() { 
+        return isPaused;
+    }
 }
