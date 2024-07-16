@@ -1,20 +1,120 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameOptionsUI : MonoBehaviour {
 
+    public static GameOptionsUI Instance { get; private set; }
+
     [SerializeField] private Button musicButton;
     [SerializeField] private Button soundEffectButton;
+    [SerializeField] private Button closeButton;
+
+    [SerializeField] private Button upButton;
+    [SerializeField] private Button downButton;
+    [SerializeField] private Button leftButton;
+    [SerializeField] private Button rightButton;
+    [SerializeField] private Button interactButton;
+    [SerializeField] private Button useButton;
+    [SerializeField] private Button pauseButton;
+
+    [SerializeField] private TextMeshProUGUI upText;
+    [SerializeField] private TextMeshProUGUI downText;
+    [SerializeField] private TextMeshProUGUI leftText;
+    [SerializeField] private TextMeshProUGUI rightText;
+    [SerializeField] private TextMeshProUGUI interactText;
+    [SerializeField] private TextMeshProUGUI useText;
+    [SerializeField] private TextMeshProUGUI pauseText;
+
+    [SerializeField] private Transform pressAKeyPromptTransform;
 
     private void Awake() {
+        Instance = this;
+
         musicButton.onClick.AddListener(() => {
 
         });
+
         soundEffectButton.onClick.AddListener(() => {
 
         });
 
+        closeButton.onClick.AddListener(() => {
+            Hide();
+        });
+
+        upButton.onClick.AddListener(() => {
+            rebind(GameInput.Binding.Up);
+        });
+
+        downButton.onClick.AddListener(() => {
+            rebind(GameInput.Binding.Down);
+        });
+
+        leftButton.onClick.AddListener(() => {
+            rebind(GameInput.Binding.Left);
+        });
+
+        rightButton.onClick.AddListener(() => {
+            rebind(GameInput.Binding.Right);
+        });
+
+        interactButton.onClick.AddListener(() => {
+            rebind(GameInput.Binding.Interact);
+        });
+
+        useButton.onClick.AddListener(() => {
+            rebind(GameInput.Binding.Use);
+        });
+
+        pauseButton.onClick.AddListener(() => {
+            rebind(GameInput.Binding.Pause);
+        });
+    }
+
+    private void Start() {
+        OverrideGameManager.Instance.onGameResume += OverrideGameManager_onGameResume;
+        Hide();
+        hidePressAKeyPrompt();
+    }
+
+    private void OverrideGameManager_onGameResume(object sender, System.EventArgs e) {
+        Hide();
+    }
+
+    private void UpdateVisual() {
+        upText.text = GameInput.Instance.getBinding(GameInput.Binding.Up);
+        downText.text = GameInput.Instance.getBinding(GameInput.Binding.Down);
+        leftText.text = GameInput.Instance.getBinding(GameInput.Binding.Left);
+        rightText.text = GameInput.Instance.getBinding(GameInput.Binding.Right);
+        interactText.text = GameInput.Instance.getBinding(GameInput.Binding.Interact);
+        useText.text = GameInput.Instance.getBinding(GameInput.Binding.Use);
+        pauseText.text = GameInput.Instance.getBinding(GameInput.Binding.Pause);
+    }
+    public void Show() {
+        gameObject.SetActive(true);
+    }
+
+    public void Hide() {
+        gameObject.SetActive(false);
+    }
+
+    public void showPressAKeyPrompt() {
+        pressAKeyPromptTransform.gameObject.SetActive(true);
+    }
+
+    public void hidePressAKeyPrompt() {
+        pressAKeyPromptTransform.gameObject.SetActive(false);
+    }
+
+    private void rebind(GameInput.Binding binding) {
+        showPressAKeyPrompt();
+
+        GameInput.Instance.rebind(binding, () => {
+            hidePressAKeyPrompt();
+            UpdateVisual();
+        });
     }
 }

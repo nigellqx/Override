@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameInput : MonoBehaviour {
 
@@ -11,12 +12,23 @@ public class GameInput : MonoBehaviour {
     public event EventHandler OnUseAction;
     public event EventHandler OnPauseAction;
 
+    public enum Binding {
+        Up,
+        Down,
+        Left,
+        Right,
+        Interact,
+        Use,
+        Pause,
+    }
+
     private PlayerInputActions playerInputActions;
 
     private void Awake() {
         Instance = this;
 
         playerInputActions = new PlayerInputActions();
+
         playerInputActions.Player.Enable();
 
         playerInputActions.Player.Interact.performed += Interact_performed;
@@ -52,4 +64,70 @@ public class GameInput : MonoBehaviour {
         return directionVector;
     }
 
+    public string getBinding(Binding binding) {
+        switch (binding) {
+            default:
+            case Binding.Up:
+                return playerInputActions.Player.Move.bindings[1].ToDisplayString();
+            case Binding.Down:
+                return playerInputActions.Player.Move.bindings[2].ToDisplayString();
+            case Binding.Left:
+                return playerInputActions.Player.Move.bindings[3].ToDisplayString();
+            case Binding.Right:
+                return playerInputActions.Player.Move.bindings[4].ToDisplayString();
+            case Binding.Interact:
+                return playerInputActions.Player.Interact.bindings[0].ToDisplayString();
+            case Binding.Use:
+                return playerInputActions.Player.Use.bindings[0].ToDisplayString();
+            case Binding.Pause:
+                return playerInputActions.Player.Pause.bindings[0].ToDisplayString();
+        }
+    }
+
+    public void rebind(Binding binding, Action onActionRebound) {
+        playerInputActions.Player.Disable();
+
+        InputAction inputAction;
+        int bindIndex;
+
+        switch(binding) {
+            default:
+            case Binding.Up:
+                inputAction = playerInputActions.Player.Move;
+                bindIndex = 1;
+                break;
+            case Binding.Down:
+                inputAction = playerInputActions.Player.Move;
+                bindIndex = 2;
+                break;
+            case Binding.Left:
+                inputAction = playerInputActions.Player.Move;
+                bindIndex = 3;
+                break;
+            case Binding.Right:
+                inputAction = playerInputActions.Player.Move;
+                bindIndex = 4;
+                break;
+            case Binding.Interact:
+                inputAction = playerInputActions.Player.Interact;
+                bindIndex = 0;
+                break;
+            case Binding.Use:
+                inputAction = playerInputActions.Player.Use;
+                bindIndex = 0;
+                break;
+            case Binding.Pause:
+                inputAction = playerInputActions.Player.Pause;
+                bindIndex = 0;
+                break;
+        }
+
+        inputAction.PerformInteractiveRebinding(bindIndex)
+            .OnComplete(callback => {
+                callback.Dispose();
+                playerInputActions.Player.Enable();
+                onActionRebound();
+            })
+            .Start();
+    }
 }
