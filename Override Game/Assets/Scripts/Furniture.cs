@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Furniture : MonoBehaviour, IParentObject {
+
+    public static event EventHandler OnDrop;
 
     [SerializeField] private Transform topPoint;
 
@@ -19,6 +22,10 @@ public class Furniture : MonoBehaviour, IParentObject {
 
     public void setClassroomObject(classroomObject classroomObject) {
         this.classroomObject = classroomObject;
+
+        if (classroomObject != null) {
+            OnDrop?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public classroomObject GetClassroomObject() {

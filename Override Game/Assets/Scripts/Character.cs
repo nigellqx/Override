@@ -9,6 +9,8 @@ public class Character : MonoBehaviour, IParentObject {
 
     public static Character Instance { get; private set; }
 
+    public event EventHandler OnPickUp;
+
     public event EventHandler<SelectedTableChangingArgs> SelectedTableChanging;
     public class SelectedTableChangingArgs : EventArgs {
         public Furniture selectedFurniture;
@@ -148,6 +150,10 @@ public class Character : MonoBehaviour, IParentObject {
 
     public void setClassroomObject(classroomObject classroomObject) {
         this.classroomObject = classroomObject;
+
+        if (classroomObject != null) {
+            OnPickUp?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public classroomObject GetClassroomObject() {

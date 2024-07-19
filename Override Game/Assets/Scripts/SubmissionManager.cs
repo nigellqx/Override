@@ -8,6 +8,9 @@ public class SubmissionManager : MonoBehaviour {
     public event EventHandler onHomeworkSpawned;
     public event EventHandler onHomeworkCompleted;
 
+    public event EventHandler onHomeworkFailed;
+    public event EventHandler onHomeworkSucceeded;
+
     public static SubmissionManager Instance {  get; private set; }
 
     [SerializeField] private HomeworkListSO HomeworkListSO;
@@ -58,11 +61,12 @@ public class SubmissionManager : MonoBehaviour {
                 if (FilePapersMatchesHomework) {
                     waitingHomeworkSOList.RemoveAt(i);
                     onHomeworkCompleted?.Invoke(this, EventArgs.Empty);
+                    onHomeworkSucceeded?.Invoke(this, EventArgs.Empty);
                     return;
                 }
             }
         }
-        Debug.Log("Wrong");
+        onHomeworkFailed?.Invoke(this, EventArgs.Empty);
     }
 
     public List<HomeworkSO> getWaitingHomeworkListSO() {
