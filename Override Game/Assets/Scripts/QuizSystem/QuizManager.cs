@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour {
+
+    public event EventHandler onCorrectAnswer;
+    public event EventHandler onWrongAnswer;
 
     public static QuizManager Instance { get; private set; }
 
@@ -30,16 +34,18 @@ public class QuizManager : MonoBehaviour {
     }
 
     public void correct() {
+        onCorrectAnswer?.Invoke(this, EventArgs.Empty);
         currentComputerTable.beginPrinting();
         quizBackground.gameObject.SetActive(false);
     }
 
     public void wrong() {
+        onWrongAnswer?.Invoke(this, EventArgs.Empty);
         quizBackground.gameObject.SetActive(false);
     }
 
     private void generateQuestions() {
-        currentQuestion = Random.Range(0, questions.Count);
+        currentQuestion = UnityEngine.Random.Range(0, questions.Count);
 
         QuestionText.text = questions[currentQuestion].Questions;
 

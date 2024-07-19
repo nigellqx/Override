@@ -17,6 +17,16 @@ public class SoundEffect : MonoBehaviour {
         Character.Instance.OnPickUp += Character_OnPickUp;
         Furniture.OnDrop += Furniture_OnDrop;
         Trashbin.OnTrashed += Trashbin_OnTrashed;
+        QuizManager.Instance.onWrongAnswer += QuizManager_onWrongAnswer;
+        QuizManager.Instance.onCorrectAnswer += QuizManager_onCorrectAnswer;
+    }
+
+    private void QuizManager_onCorrectAnswer(object sender, System.EventArgs e) {
+        playSoundEffect(soundEffectSO.correctAnswer, Camera.main.transform.position);
+    }
+
+    private void QuizManager_onWrongAnswer(object sender, System.EventArgs e) {
+        playSoundEffect(soundEffectSO.wrongAnswer, Camera.main.transform.position);
     }
 
     private void Trashbin_OnTrashed(object sender, System.EventArgs e) {

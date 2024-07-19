@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - printing: {fileID: 8300000, guid: 4a975ec40d5a5474e80581b79222b3d3, type: 3}
+  - printing: {fileID: 8300000, guid: 99ae1e0fe46e46346af823d50f16baba, type: 3}
   - submissionFail: {fileID: 8300000, guid: 400611abd7434234993616a86c030d1e, type: 3}
   - submissionSucceeded: {fileID: 8300000, guid: 4b22bfbdbacfa0445bc9bbfbb0141085,
       type: 3}
@@ -12,6 +12,8 @@ MonoImporter:
   - pickUp: {fileID: 8300000, guid: 668de61a04ca5914aa745f8712c62720, type: 3}
   - drop: {fileID: 8300000, guid: 9c88983fa5906dc41944ec5a43b6b5c7, type: 3}
   - trash: {fileID: 8300000, guid: 6024ba1d53d005f48a96b3a9f6bacedd, type: 3}
+  - correctAnswer: {fileID: 8300000, guid: 50205ffe58351d244bbcbd725dbfa802, type: 3}
+  - wrongAnswer: {fileID: 8300000, guid: 6a936576e1e30a640844535c71d5a149, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
