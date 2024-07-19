@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class SoundEffect : MonoBehaviour {
 
+    public static SoundEffect Instance { get; private set; }
+
     [SerializeField] private SoundEffectSO soundEffectSO;
+
+    private void Awake() {
+        Instance = this;
+    }
     private void Start() {
         SubmissionManager.Instance.onHomeworkSucceeded += SubmissionManager_onHomeworkSucceeded;
         SubmissionManager.Instance.onHomeworkFailed += SubmissionManager_onHomeworkFailed;

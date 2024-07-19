@@ -12,5 +12,4 @@ public class SoundEffectSO : ScriptableObject {
     public AudioClip pickUp;
     public AudioClip drop;
     public AudioClip trash;
-    public AudioClip warning;
 }

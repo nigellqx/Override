@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6424196437820980266}
   - component: {fileID: 1024878720926342956}
+  - component: {fileID: 2563212328395374516}
   m_Layer: 0
   m_Name: SoundPrinting
   m_TagString: Untagged
@@ -128,6 +129,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2563212328395374516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975442046673642324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c32827660e9fd4a9098f41b772a35a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  printer: {fileID: 1020212687810704662}
+  audioClip: {fileID: 8300000, guid: 99ae1e0fe46e46346af823d50f16baba, type: 3}
 --- !u!1 &8259690958811691521
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,6 +503,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2280731914592542731}
     m_Modifications:
+    - target: {fileID: 361471456948784123, guid: 26b50dca36c37464182ce4ef7aba44f4,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5702343726700217955, guid: 26b50dca36c37464182ce4ef7aba44f4,
         type: 3}
       propertyPath: m_Name
