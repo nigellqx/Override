@@ -7,6 +7,10 @@ public class Furniture : MonoBehaviour, IParentObject {
 
     public static event EventHandler OnDrop;
 
+    public static void resetStatic() {
+        OnDrop = null;
+    }
+
     [SerializeField] private Transform topPoint;
 
     private classroomObject classroomObject;
