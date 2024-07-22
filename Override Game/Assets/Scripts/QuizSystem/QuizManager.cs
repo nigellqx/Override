@@ -14,6 +14,7 @@ public class QuizManager : MonoBehaviour {
     private ComputerTable currentComputerTable;
 
     [SerializeField] private Transform quizBackground;
+    [SerializeField] private Button firstButton;
 
     public List<Question> questions;
 
@@ -22,6 +23,8 @@ public class QuizManager : MonoBehaviour {
     public int currentQuestion;
 
     public Text QuestionText;
+
+    public bool currentlyInQuestion = false;
 
     private void Awake() {
         Instance = this;
@@ -36,11 +39,13 @@ public class QuizManager : MonoBehaviour {
     public void correct() {
         onCorrectAnswer?.Invoke(this, EventArgs.Empty);
         currentComputerTable.beginPrinting();
+        currentlyInQuestion = false;
         quizBackground.gameObject.SetActive(false);
     }
 
     public void wrong() {
         onWrongAnswer?.Invoke(this, EventArgs.Empty);
+        currentlyInQuestion = false;
         quizBackground.gameObject.SetActive(false);
     }
 
@@ -53,8 +58,10 @@ public class QuizManager : MonoBehaviour {
     }
 
     public void askQuestions(ComputerTable computerTable) {
+        currentlyInQuestion = true;
         this.currentComputerTable = computerTable;
         generateQuestions();
+        firstButton.Select();
         quizBackground.gameObject.SetActive(true);
     }
 
@@ -67,5 +74,14 @@ public class QuizManager : MonoBehaviour {
                 options[i].GetComponent<Answer>().isCorrect = true;
             }
         }
+    }
+
+    public void Hide() {
+        quizBackground.gameObject.SetActive(false);
+    }
+
+    public void Show() {
+        quizBackground.gameObject.SetActive(true);
+        firstButton.Select();
     }
 }

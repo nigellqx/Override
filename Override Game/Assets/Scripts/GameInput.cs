@@ -20,6 +20,9 @@ public class GameInput : MonoBehaviour {
         Interact,
         Use,
         Pause,
+        ControllerInteract,
+        ControllerUse,
+        ControllerPause
     }
 
     private PlayerInputActions playerInputActions;
@@ -81,6 +84,12 @@ public class GameInput : MonoBehaviour {
                 return playerInputActions.Player.Use.bindings[0].ToDisplayString();
             case Binding.Pause:
                 return playerInputActions.Player.Pause.bindings[0].ToDisplayString();
+            case Binding.ControllerInteract:
+                return playerInputActions.Player.Interact.bindings[1].ToDisplayString();
+            case Binding.ControllerUse:
+                return playerInputActions.Player.Use.bindings[1].ToDisplayString();
+            case Binding.ControllerPause:
+                return playerInputActions.Player.Pause.bindings[1].ToDisplayString();
         }
     }
 
@@ -119,6 +128,18 @@ public class GameInput : MonoBehaviour {
             case Binding.Pause:
                 inputAction = playerInputActions.Player.Pause;
                 bindIndex = 0;
+                break;
+            case Binding.ControllerInteract:
+                inputAction = playerInputActions.Player.Interact;
+                bindIndex = 1;
+                break;
+            case Binding.ControllerUse:
+                inputAction = playerInputActions.Player.Use;
+                bindIndex = 1;
+                break;
+            case Binding.ControllerPause:
+                inputAction = playerInputActions.Player.Pause;
+                bindIndex = 1;
                 break;
         }
 

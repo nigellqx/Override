@@ -11,19 +11,20 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private Button quitButton;
     [SerializeField] private Button backButton;
     [SerializeField] private Transform instructionUI;
-    [SerializeField] private Transform StageSelectUI;
 
     private void Awake() {
         playButton.onClick.AddListener(() => {
-            StageSelectUI.gameObject.SetActive(true);
+            StageSelectUI.Instance.Show();
         });
 
         controlsButton.onClick.AddListener(() => {
             instructionUI.gameObject.SetActive(true);
+            backButton.Select();
         });
 
         backButton.onClick.AddListener(() => {
             instructionUI.gameObject.SetActive(false);
+            playButton.Select();
         });
 
         quitButton.onClick.AddListener(() => { 
