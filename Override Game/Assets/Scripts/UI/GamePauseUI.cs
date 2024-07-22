@@ -19,7 +19,8 @@ public class GamePauseUI : MonoBehaviour {
             SceneManager.LoadScene("MainMenuScene");
         });
         optionsButton.onClick.AddListener(() => {
-            GameOptionsUI.Instance.Show();
+            Hide();
+            GameOptionsUI.Instance.Show(Show);
         });
     }
 
@@ -39,9 +40,16 @@ public class GamePauseUI : MonoBehaviour {
 
     private void Show() {
         gameObject.SetActive(true);
+        if (QuizManager.Instance.currentlyInQuestion) {
+            QuizManager.Instance.Hide();
+        }
+        resumeButton.Select();
     }
 
     private void Hide() {
         gameObject.SetActive(false);
+        if (QuizManager.Instance.currentlyInQuestion) {
+            QuizManager.Instance.Show();
+        }
     }   
 }

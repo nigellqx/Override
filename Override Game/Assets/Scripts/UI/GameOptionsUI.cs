@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -19,6 +20,9 @@ public class GameOptionsUI : MonoBehaviour {
     [SerializeField] private Button interactButton;
     [SerializeField] private Button useButton;
     [SerializeField] private Button pauseButton;
+    [SerializeField] private Button controllerInteractButton;
+    [SerializeField] private Button controllerUseButton;
+    [SerializeField] private Button controllerPauseButton;
 
     [SerializeField] private TextMeshProUGUI upText;
     [SerializeField] private TextMeshProUGUI downText;
@@ -27,8 +31,13 @@ public class GameOptionsUI : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI interactText;
     [SerializeField] private TextMeshProUGUI useText;
     [SerializeField] private TextMeshProUGUI pauseText;
+    [SerializeField] private TextMeshProUGUI controllerInteractText;
+    [SerializeField] private TextMeshProUGUI controllerUseText;
+    [SerializeField] private TextMeshProUGUI controllerPauseText;
 
     [SerializeField] private Transform pressAKeyPromptTransform;
+
+    private Action onCloseButtonAction;
 
     private void Awake() {
         Instance = this;
@@ -43,6 +52,7 @@ public class GameOptionsUI : MonoBehaviour {
 
         closeButton.onClick.AddListener(() => {
             Hide();
+            onCloseButtonAction();
         });
 
         upButton.onClick.AddListener(() => {
@@ -72,6 +82,17 @@ public class GameOptionsUI : MonoBehaviour {
         pauseButton.onClick.AddListener(() => {
             rebind(GameInput.Binding.Pause);
         });
+        controllerInteractButton.onClick.AddListener(() => {
+            rebind(GameInput.Binding.ControllerInteract);
+        });
+
+        controllerUseButton.onClick.AddListener(() => {
+            rebind(GameInput.Binding.ControllerUse);
+        });
+
+        controllerPauseButton.onClick.AddListener(() => {
+            rebind(GameInput.Binding.ControllerPause);
+        });
     }
 
     private void Start() {
@@ -92,9 +113,14 @@ public class GameOptionsUI : MonoBehaviour {
         interactText.text = GameInput.Instance.getBinding(GameInput.Binding.Interact);
         useText.text = GameInput.Instance.getBinding(GameInput.Binding.Use);
         pauseText.text = GameInput.Instance.getBinding(GameInput.Binding.Pause);
+        controllerInteractText.text = GameInput.Instance.getBinding(GameInput.Binding.ControllerInteract);
+        controllerUseText.text = GameInput.Instance.getBinding(GameInput.Binding.ControllerUse);
+        controllerPauseText.text = GameInput.Instance.getBinding(GameInput.Binding.ControllerPause);
     }
-    public void Show() {
+    public void Show(Action onCloseButtonAction) {
+        this.onCloseButtonAction = onCloseButtonAction;
         gameObject.SetActive(true);
+        soundEffectButton.Select();
     }
 
     public void Hide() {

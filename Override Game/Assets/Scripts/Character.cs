@@ -108,7 +108,7 @@ public class Character : MonoBehaviour, IParentObject {
 
             //Try moving in X-direction
             Vector3 newPositionX = new Vector3(newPosition.x, 0, 0);
-            willCollide = newPosition.x == 0 || Physics.CapsuleCast(transform.position, transform.position + Vector3.up * characterHeight, characterRadius, newPositionX, distanceMoved);
+            willCollide = (newPosition.x < 0.5 && newPosition.x > -0.5) || Physics.CapsuleCast(transform.position, transform.position + Vector3.up * characterHeight, characterRadius, newPositionX, distanceMoved);
 
             //Can move in X-direction
             if (!willCollide) {
@@ -117,7 +117,7 @@ public class Character : MonoBehaviour, IParentObject {
 
                 //Cannot move in X-direction, try moving in Z-direction
                 Vector3 newPositionZ = new Vector3(0, 0, newPosition.z);
-                willCollide = newPosition.z == 0 || Physics.CapsuleCast(transform.position, transform.position + Vector3.up * characterHeight, characterRadius, newPositionZ, distanceMoved);
+                willCollide = (newPosition.z < 0.5 && newPosition.z > -0.5) || Physics.CapsuleCast(transform.position, transform.position + Vector3.up * characterHeight, characterRadius, newPositionZ, distanceMoved);
 
                 //Can move in Z-direction
                 if (!willCollide) {
