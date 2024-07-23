@@ -13,6 +13,9 @@ public class GameOptionsUI : MonoBehaviour {
     [SerializeField] private Button soundEffectButton;
     [SerializeField] private Button closeButton;
 
+    [SerializeField] private TextMeshProUGUI musicText;
+    [SerializeField] private TextMeshProUGUI soundEffectText;
+
     [SerializeField] private Button upButton;
     [SerializeField] private Button downButton;
     [SerializeField] private Button leftButton;
@@ -43,11 +46,13 @@ public class GameOptionsUI : MonoBehaviour {
         Instance = this;
 
         musicButton.onClick.AddListener(() => {
-
+            MusicManager.Instance.changeSound();
+            UpdateVisual();
         });
 
         soundEffectButton.onClick.AddListener(() => {
-
+            SoundEffect.Instance.changeSound();
+            UpdateVisual();
         });
 
         closeButton.onClick.AddListener(() => {
@@ -97,6 +102,7 @@ public class GameOptionsUI : MonoBehaviour {
 
     private void Start() {
         OverrideGameManager.Instance.onGameResume += OverrideGameManager_onGameResume;
+        UpdateVisual();
         Hide();
         hidePressAKeyPrompt();
     }
@@ -106,6 +112,9 @@ public class GameOptionsUI : MonoBehaviour {
     }
 
     private void UpdateVisual() {
+        soundEffectText.text = "Sound Effects: " + Mathf.Round(SoundEffect.Instance.getSound() * 10f);
+        musicText.text = "Music: " + Mathf.Round(MusicManager.Instance.getSound() * 10f);
+
         upText.text = GameInput.Instance.getBinding(GameInput.Binding.Up);
         downText.text = GameInput.Instance.getBinding(GameInput.Binding.Down);
         leftText.text = GameInput.Instance.getBinding(GameInput.Binding.Left);

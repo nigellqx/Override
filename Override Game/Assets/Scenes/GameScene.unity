@@ -3729,6 +3729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 600511065}
   - component: {fileID: 600511064}
+  - component: {fileID: 600511066}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -3847,6 +3848,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &600511066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600511063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad0fe61288fc944a973d810331fbd74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &610148223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5555,6 +5568,8 @@ MonoBehaviour:
   musicButton: {fileID: 562939700}
   soundEffectButton: {fileID: 2110438234}
   closeButton: {fileID: 1652661124}
+  musicText: {fileID: 661410490}
+  soundEffectText: {fileID: 101206287}
   upButton: {fileID: 1170580452}
   downButton: {fileID: 699940233}
   leftButton: {fileID: 1781671541}
