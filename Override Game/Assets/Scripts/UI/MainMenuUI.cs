@@ -7,19 +7,24 @@ using UnityEngine.UI;
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private Button playButton;
-    [SerializeField] private Button controlsButton;
+    [SerializeField] private Button instructionsButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private Button backButton;
+    [SerializeField] private Button back2Button;
+    [SerializeField] private Button nextButton;
+    [SerializeField] private Button closeButton;
     [SerializeField] private Transform instructionUI;
+    [SerializeField] private Transform howToPlayUI;
 
     private void Awake() {
         playButton.onClick.AddListener(() => {
             StageSelectUI.Instance.Show();
         });
 
-        controlsButton.onClick.AddListener(() => {
+        instructionsButton.onClick.AddListener(() => {
             instructionUI.gameObject.SetActive(true);
             backButton.Select();
+            nextButton.Select();
         });
 
         backButton.onClick.AddListener(() => {
@@ -29,6 +34,25 @@ public class MainMenuUI : MonoBehaviour
 
         quitButton.onClick.AddListener(() => { 
             Application.Quit();
+        });
+
+        nextButton.onClick.AddListener(() => {
+            howToPlayUI.gameObject.SetActive(true);
+            instructionUI.gameObject.SetActive(false);
+            back2Button.Select();
+            closeButton.Select();
+        });
+
+        back2Button.onClick.AddListener(() => {
+            howToPlayUI.gameObject.SetActive(false);
+            instructionUI.gameObject.SetActive(true);
+            backButton.Select();
+            nextButton.Select();
+        });
+
+        closeButton.onClick.AddListener(() => {
+            howToPlayUI.gameObject.SetActive(false);
+            playButton.Select();
         });
 
         Time.timeScale = 1f;

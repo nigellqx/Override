@@ -40,6 +40,14 @@ public class GameOptionsUI : MonoBehaviour {
 
     [SerializeField] private Transform pressAKeyPromptTransform;
 
+    [SerializeField] private Button instructionsButton;
+    [SerializeField] private Button backButton;
+    [SerializeField] private Button back2Button;
+    [SerializeField] private Button nextButton;
+    [SerializeField] private Button closeInsturctionsButton;
+    [SerializeField] private Transform instructionUI;
+    [SerializeField] private Transform howToPlayUI;
+
     private Action onCloseButtonAction;
 
     private void Awake() {
@@ -97,6 +105,34 @@ public class GameOptionsUI : MonoBehaviour {
 
         controllerPauseButton.onClick.AddListener(() => {
             rebind(GameInput.Binding.ControllerPause);
+        });
+
+        instructionsButton.onClick.AddListener(() => {
+            instructionUI.gameObject.SetActive(true);
+            backButton.Select();
+            nextButton.Select();
+        });
+
+        backButton.onClick.AddListener(() => {
+            instructionUI.gameObject.SetActive(false);
+        });
+
+        nextButton.onClick.AddListener(() => {
+            howToPlayUI.gameObject.SetActive(true);
+            instructionUI.gameObject.SetActive(false);
+            back2Button.Select();
+            closeInsturctionsButton.Select();
+        });
+
+        back2Button.onClick.AddListener(() => {
+            howToPlayUI.gameObject.SetActive(false);
+            instructionUI.gameObject.SetActive(true);
+            backButton.Select();
+            nextButton.Select();
+        });
+
+        closeInsturctionsButton.onClick.AddListener(() => {
+            howToPlayUI.gameObject.SetActive(false);
         });
     }
 
