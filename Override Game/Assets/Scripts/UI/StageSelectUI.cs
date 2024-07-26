@@ -10,6 +10,7 @@ public class StageSelectUI : MonoBehaviour
     [SerializeField] private Button backButton;
     [SerializeField] private Button classroomButton;
     [SerializeField] private Button playButton;
+    [SerializeField] private Button houseButton;
 
     public static StageSelectUI Instance { get; private set; }
 
@@ -21,6 +22,10 @@ public class StageSelectUI : MonoBehaviour
 
         classroomButton.onClick.AddListener(() => {
             SceneManager.LoadScene("GameScene");
+        });
+
+        houseButton.onClick.AddListener(() => {
+            SceneManager.LoadScene("HouseScene");
         });
 
         Hide();
