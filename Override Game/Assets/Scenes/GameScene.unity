@@ -9585,6 +9585,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quizBackground: {fileID: 1367772018}
   firstButton: {fileID: 1015612698}
+  programmingQuestions:
+  - Questions: This is a programming question
+    Answers:
+    - Correct
+    - Wrong
+    - Wrong
+    - Wrong
+    CorrectAnswers: 1
+  dataQuestions:
+  - Questions: This is a data question
+    Answers:
+    - Correct
+    - Wrong
+    - Wrong
+    - Wrong
+    CorrectAnswers: 1
+  mathQuestions:
+  - Questions: This is a math question
+    Answers:
+    - Correct
+    - Wrong
+    - Wrong
+    - Wrong
+    CorrectAnswers: 1
   questions:
   - Questions: Name of the game?
     Answers:

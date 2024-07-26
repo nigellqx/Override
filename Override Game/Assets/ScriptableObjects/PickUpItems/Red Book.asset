@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 5771772698505155423, guid: efee89e93091afa4ab83529d98436fc0, type: 3}
   objectName: Red Book
+  sprite: {fileID: 0}
+  questionSet: 1

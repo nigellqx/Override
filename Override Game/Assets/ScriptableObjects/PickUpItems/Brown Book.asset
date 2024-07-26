@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7307851917949493182, guid: 8e7b59b4b2ae5c347a1400711825e3b1, type: 3}
   objectName: Brown Book
+  sprite: {fileID: 0}
+  questionSet: 4
