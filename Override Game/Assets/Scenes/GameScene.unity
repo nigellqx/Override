@@ -9586,29 +9586,220 @@ MonoBehaviour:
   quizBackground: {fileID: 1367772018}
   firstButton: {fileID: 1015612698}
   programmingQuestions:
-  - Questions: This is a programming question
+  - Questions: What is the definition of Polymorphism
     Answers:
-    - Correct
-    - Wrong
-    - Wrong
-    - Wrong
+    - A spell that turns something into a sheep
+    - Accessing objects of different types through the same interface
+    - A HAS-A relationship between two objects
+    - Hiding data so that it can only be accessed from within a class
+    CorrectAnswers: 2
+  - Questions: Java is a _______ programming language
+    Answers:
+    - strongly typed
+    - weakly typed
+    - powerfully typed
+    - loosely typed
     CorrectAnswers: 1
+  - Questions: Building house = new House(); What is the Compile-Time type of house?
+    Answers:
+    - Object
+    - House
+    - null
+    - Building
+    CorrectAnswers: 4
+  - Questions: Which of the following statements is not true about java
+    Answers:
+    - The Java comiler javac compiles Java source to bytecode
+    - The Java Virtual Machine executes Java bytecode
+    - Java is a dynamically typed language
+    - Java does not allow multiple inheritance for classes
+    CorrectAnswers: 3
+  - Questions: A is a subtype of B and B is a subtype of C. Which of the following
+      statements must be  true
+    Answers:
+    - A is a subtype of C
+    - C is a subtype of A
+    - A and C have no subtype relation
+    - C is a subtype of B
+    CorrectAnswers: 1
+  - Questions: Which of the following is not a Java access modifier
+    Answers:
+    - Public
+    - Private
+    - Protected
+    - None of the above
+    CorrectAnswers: 4
+  - Questions: Which of the following is NOT a way functions help programmers deal
+      with complexity
+    Answers:
+    - Functions allow programmers to compartmentalize computation and its effects
+    - None of the above
+    - Functions allow programmers to hide how a task is performed
+    - Functions allows us to reduce repetition in our code through code reuse
+    CorrectAnswers: 2
+  - Questions: Which feature of OOP indicates code reusability
+    Answers:
+    - Abstraction
+    - Polymorphism
+    - Inheritance
+    - Encapsulation
+    CorrectAnswers: 3
+  - Questions: Stateful stream operations need to ______
+    Answers:
+    - be called on a sorted stream
+    - terminate the stream after they are called
+    - be called multiple times
+    - keep track of some states to operate
+    CorrectAnswers: 4
+  - Questions: Caching a value and returning it when the result is needed again is
+      known as
+    Answers:
+    - Memoization
+    - Memorisation
+    - Recall Protocol
+    - Memory
+    CorrectAnswers: 4
   dataQuestions:
-  - Questions: This is a data question
+  - Questions: In an AVL tree, the heights of the two subtrees differ by at most
+      __
     Answers:
-    - Correct
-    - Wrong
-    - Wrong
-    - Wrong
+    - 1
+    - 2
+    - 3
+    - 4
     CorrectAnswers: 1
+  - Questions: Dijkstra's algorithm generates a _________
+    Answers:
+    - Shortest Path Tree
+    - Longest Path Tree
+    - Minimum Spanning Tree
+    - Maximum Spanning Tree
+    CorrectAnswers: 1
+  - Questions: Prim's algorithm generates a _________
+    Answers:
+    - Shortest Path Tree
+    - Longest Path Tree
+    - Minimum Spanning Tree
+    - Maximum Spanning Tree
+    CorrectAnswers: 3
+  - Questions: Kruskal's algorithm generates a _________
+    Answers:
+    - Shortest Path Tree
+    - Longest Path Tree
+    - Minimum Spanning Tree
+    - Maximum Spanning Tree
+    CorrectAnswers: 3
+  - Questions: Bellman Ford's algorithm generates a _________
+    Answers:
+    - Shortest Path Tree
+    - Longest Path Tree
+    - Minimum Spanning Tree
+    - Maximum Spanning Tree
+    CorrectAnswers: 1
+  - Questions: 'The minimum number of keys in the root node of an AVL Tree is '
+    Answers:
+    - 1
+    - 2
+    - 3
+    - 4
+    CorrectAnswers: 1
+  - Questions: What is the order of growth of binary search
+    Answers:
+    - O(n)
+    - O(log n)
+    - O(n)
+    - O(n^2)
+    CorrectAnswers: 2
+  - Questions: When a node is inserted into an AVL tree of height n, what is the
+      maximum number of rotations necessary to rebalance the tree
+    Answers:
+    - 1
+    - 2
+    - log(n)
+    - n
+    CorrectAnswers: 2
+  - Questions: Which of the following is not a form of open addressing
+    Answers:
+    - Linear probing
+    - Double hashing
+    - Cuckoo hashing
+    - Direct Probing
+    CorrectAnswers: 2
+  - Questions: Which of the following is not a stable sorting method
+    Answers:
+    - MergeSort
+    - InsertionSort
+    - SelectionSort
+    - BubbleSort
+    CorrectAnswers: 3
   mathQuestions:
-  - Questions: This is a math question
+  - Questions: What is an Eigenvalue
     Answers:
-    - Correct
-    - Wrong
-    - Wrong
-    - Wrong
+    - any number such that a given matrix minus that number times the identity matrix
+      has zero determinant.
+    - a special set of vectors associated with a linear system of equations
+    - A number from the Eigen series
+    - A value from an Eigenvector
     CorrectAnswers: 1
+  - Questions: What is a null space
+    Answers:
+    - A matrix with no numbers in it
+    - A vector with no numbers in it
+    - The set of all possible orthogonal vectors to the matrix A.
+    - A zero vector
+    CorrectAnswers: 3
+  - Questions: What is a matrix
+    Answers:
+    - A Science Fiction and Action movie from 1999
+    - A set of numbers arranged in rows and columns so as to form a rectangular array
+    - a special set of vectors associated with a linear system of equations
+    - None of the above
+    CorrectAnswers: 2
+  - Questions: What is the orthogonal complement of the row space
+    Answers:
+    - The diagonal space
+    - The dimension
+    - The column space
+    - The null space
+    CorrectAnswers: 4
+  - Questions: If a matrix is in Row Echelon Form, it is also in Reduced Row Echelon
+      Form
+    Answers:
+    - True
+    - False
+    - Maybe?
+    - None of the above
+    CorrectAnswers: 2
+  - Questions: If a matrix is in Reduced Row Echelon Form, it is also in Row Echelon
+      Form
+    Answers:
+    - True
+    - False
+    - Maybe?
+    - None of the above
+    CorrectAnswers: 1
+  - Questions: A system of linear equations is said to be homogeneous if the constant
+      terms are all
+    Answers:
+    - 0
+    - 1
+    - 0 or 1
+    - Variables
+    CorrectAnswers: 1
+  - Questions: A matrix with only one column is called a ____
+    Answers:
+    - Null Matrix
+    - Row Matrix
+    - Vector
+    - Eigenmatrix
+    CorrectAnswers: 3
+  - Questions: A set of more than one equation is called a
+    Answers:
+    - Eigensystem
+    - System of variables
+    - Collection of Equations
+    - System of Equations
+    CorrectAnswers: 4
   questions:
   - Questions: Name of the game?
     Answers:
