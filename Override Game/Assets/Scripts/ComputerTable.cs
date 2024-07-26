@@ -42,7 +42,7 @@ public class ComputerTable : Furniture
         return bookToPaper != null;
     }
 
-    private pickUpObject bookToPaper(pickUpObject itemOnTable) {
+    public pickUpObject bookToPaper(pickUpObject itemOnTable) {
         BookToPaperSO bookToPaper = getbookToPaperSO(itemOnTable);
         if (bookToPaper != null) {
             return bookToPaper.output;

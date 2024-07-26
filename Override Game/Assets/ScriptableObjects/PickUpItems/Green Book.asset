@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 859299758631021291, guid: a029ac996487c754fb29df0b15569f59, type: 3}
   objectName: Green Book
+  sprite: {fileID: 0}
+  questionSet: 3
