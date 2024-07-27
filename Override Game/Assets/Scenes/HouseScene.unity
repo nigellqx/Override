@@ -5422,7 +5422,7 @@ MonoBehaviour:
     - Double hashing
     - Cuckoo hashing
     - Direct Probing
-    CorrectAnswers: 2
+    CorrectAnswers: 4
   - Questions: Which of the following is not a stable sorting method
     Answers:
     - MergeSort
