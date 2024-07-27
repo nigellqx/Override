@@ -5284,7 +5284,7 @@ MonoBehaviour:
     - Memorisation
     - Recall Protocol
     - Memory
-    CorrectAnswers: 4
+    CorrectAnswers: 1
   - Questions: In many programming language, what is the index of the first element
       in an array?
     Answers:
