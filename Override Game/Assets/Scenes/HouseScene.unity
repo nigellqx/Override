@@ -2739,7 +2739,7 @@ PrefabInstance:
     - target: {fileID: 2280731914592542731, guid: 7bf881b9ac87e864f85ee3bf23e88f09,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.93
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 2280731914592542731, guid: 7bf881b9ac87e864f85ee3bf23e88f09,
         type: 3}
@@ -16087,7 +16087,7 @@ PrefabInstance:
     - target: {fileID: 2280731914592542731, guid: 7bf881b9ac87e864f85ee3bf23e88f09,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.93
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 2280731914592542731, guid: 7bf881b9ac87e864f85ee3bf23e88f09,
         type: 3}
@@ -17259,12 +17259,12 @@ MonoBehaviour:
     - Heights
     CorrectAnswers: 4
   options:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1015612694}
+  - {fileID: 1462018520}
+  - {fileID: 849111545}
+  - {fileID: 1146938689}
   currentQuestion: 0
-  QuestionText: {fileID: 0}
+  QuestionText: {fileID: 63892978}
   currentlyInQuestion: 0
 --- !u!4 &2101324047
 Transform:
