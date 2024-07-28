@@ -42,6 +42,7 @@ public class Character : MonoBehaviour, IParentObject {
     private void GameInput_OnUseAction(object sender, EventArgs e) {
         if (!OverrideGameManager.Instance.isGamePlaying()) return;
         if (OverrideGameManager.Instance.isGamePaused()) return;
+        if (QuizManager.Instance.currentlyInQuestion) return;
 
         if (selectedFurniture != null) {
             selectedFurniture.Use(this);
@@ -51,6 +52,7 @@ public class Character : MonoBehaviour, IParentObject {
     private void GameInput_OnInteractAction(object sender, System.EventArgs e) {
         if (!OverrideGameManager.Instance.isGamePlaying()) return;
         if (OverrideGameManager.Instance.isGamePaused()) return;
+        if (QuizManager.Instance.currentlyInQuestion) return;
 
         if (selectedFurniture != null) {
             selectedFurniture.Interact(this);
@@ -93,6 +95,7 @@ public class Character : MonoBehaviour, IParentObject {
     }
 
     private void Movement() {
+        if (QuizManager.Instance.currentlyInQuestion) return;
         Vector2 directionVector = gameInput.GetNormalisedMovementVector();
         Vector3 newPosition = new Vector3(directionVector.x, 0f, directionVector.y);
 
