@@ -25,6 +25,7 @@ public class GameOverUI : MonoBehaviour
     private void OverrideGameManager_onGamestateChanged(object sender, System.EventArgs e) {
         if (OverrideGameManager.Instance.isGameOver()) {
             show();
+            mainMenuButton.Select();
             noOfHomeworkSubmitted.text = ScoreManager.Instance.getScore().ToString();
         } else {
             hide();
